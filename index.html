@@ -1,0 +1,944 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BlueCurrent Electrical - Electrical installation, maintenance, and troubleshooting for homes and businesses.">
+    <title>BlueCurrent Electrical | Reliable Power. Every Connection.</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f8fc;
+            color: #152a40;
+            line-height: 1.6;
+        }
+
+        :root {
+            --navy: #071a2e;
+            --blue: #087fe7;
+            --cyan: #45d7f5;
+            --white: #ffffff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            background: var(--navy);
+            color: white;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #173c59;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--cyan);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan);
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            background:
+                radial-gradient(circle at 85% 20%, #12517a, transparent 35%),
+                linear-gradient(135deg, #061525, #0b3457);
+            color: white;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .eyebrow {
+            color: var(--cyan);
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            line-height: 1.1;
+            margin: 20px 0;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: var(--cyan);
+        }
+
+        .hero p {
+            color: #c7d9e9;
+            font-size: 17px;
+            max-width: 580px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: var(--cyan);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid #8ba9c0;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: var(--navy);
+        }
+
+        .hero-icon {
+            flex: 0 0 300px;
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(69, 215, 245, 0.5);
+            border-radius: 50%;
+            background: radial-gradient(circle, #15577d, #071a2e 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--cyan);
+            font-size: 130px;
+            box-shadow: 0 0 60px rgba(69, 215, 245, 0.12);
+        }
+
+        /* GENERAL SECTIONS */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-heading h2 {
+            font-size: 36px;
+            line-height: 1.2;
+            margin: 12px 0;
+            color: var(--navy);
+        }
+
+        .section-heading p {
+            color: #63778b;
+        }
+
+        /* SERVICES */
+
+        .services {
+            background: white;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: #f7fbff;
+            border: 1px solid #e0eaf3;
+            padding: 30px;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(7, 26, 46, 0.1);
+            border-color: var(--cyan);
+        }
+
+        .service-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .service-card p {
+            color: #63778b;
+            font-size: 15px;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+            align-items: center;
+        }
+
+        .about-visual {
+            min-height: 340px;
+            background: linear-gradient(135deg, #0b3457, #071a2e);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            padding: 35px;
+        }
+
+        .about-visual .symbol {
+            color: var(--cyan);
+            font-size: 100px;
+            line-height: 1.2;
+        }
+
+        .about-visual h3 {
+            font-size: 25px;
+            margin-top: 15px;
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            color: var(--navy);
+            line-height: 1.2;
+            margin: 15px 0 20px;
+        }
+
+        .about-text p {
+            color: #63778b;
+            margin-bottom: 16px;
+        }
+
+        .values {
+            list-style: none;
+            margin-top: 22px;
+        }
+
+        .values li {
+            margin: 12px 0;
+            font-weight: bold;
+        }
+
+        .values li span {
+            color: var(--blue);
+            margin-right: 10px;
+        }
+
+        /* WHY CHOOSE US */
+
+        .why-us {
+            background: #eaf4fc;
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .benefit {
+            padding: 25px;
+        }
+
+        .benefit h3 {
+            margin: 12px 0;
+            color: var(--navy);
+        }
+
+        .benefit p {
+            color: #63778b;
+        }
+
+        .benefit-icon {
+            font-size: 38px;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: var(--navy);
+            color: white;
+        }
+
+        .contact .section-heading h2 {
+            color: white;
+        }
+
+        .contact .section-heading p {
+            color: #bdd2e4;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 45px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: #bdd2e4;
+            margin-bottom: 22px;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--cyan);
+        }
+
+        .contact-form {
+            background: white;
+            color: var(--navy);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-form h3 {
+            margin-bottom: 20px;
+            font-size: 23px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d4e0ea;
+            border-radius: 6px;
+            font: inherit;
+            background: #fbfdff;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .form-note {
+            color: #63778b;
+            font-size: 12px;
+            margin-top: 12px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #04111f;
+            color: #a8bed0;
+            padding: 25px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* MOBILE RESPONSIVE */
+
+        @media (max-width: 850px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .hero-icon {
+                flex: 0 0 230px;
+                width: 230px;
+                height: 230px;
+                font-size: 95px;
+            }
+
+            .service-grid,
+            .benefit-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .container {
+                width: 92%;
+            }
+
+            header {
+                position: static;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-heading h2,
+            .about-text h2 {
+                font-size: 29px;
+            }
+
+            .service-grid,
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card {
+                padding: 25px;
+            }
+
+            .contact-form {
+                padding: 22px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    BlueCurrent <span>Electrical</span>
+                </div>
+
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <div class="eyebrow">Reliable Electrical Solutions</div>
+
+                <h1>
+                    Reliable Power.<br>
+                    <span>Every Connection.</span>
+                </h1>
+
+                <p>
+                    BlueCurrent Electrical is focused on providing dependable
+                    electrical installation, maintenance, and troubleshooting
+                    solutions for residential and commercial properties.
+                </p>
+
+                <div class="buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        Inquire About Services →
+                    </a>
+
+                    <a href="#services" class="btn btn-outline">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-icon" aria-label="Electrical power symbol">
+                ⚡
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">Our Services</div>
+                <h2>Powering Homes and Businesses</h2>
+                <p>
+                    Practical electrical solutions designed around safety,
+                    quality workmanship, and dependable service.
+                </p>
+            </div>
+
+            <div class="service-grid">
+
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Residential Electrical</h3>
+                    <p>
+                        Electrical installation and improvements for homes,
+                        lighting, outlets, switches, and other electrical needs.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Commercial Electrical</h3>
+                    <p>
+                        Electrical solutions for offices, shops, and other
+                        commercial establishments.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Installation and Upgrades</h3>
+                    <p>
+                        Support for electrical installations, circuit upgrades,
+                        and equipment connections.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Troubleshooting</h3>
+                    <p>
+                        Systematic assessment of electrical issues to help
+                        identify faults and suitable solutions.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔌</div>
+                    <h3>Preventive Maintenance</h3>
+                    <p>
+                        Routine inspection and maintenance planning to help
+                        keep electrical systems in good condition.
+                    </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Electrical Safety</h3>
+                    <p>
+                        Attention to safe work practices, quality workmanship,
+                        and applicable electrical requirements.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container about-grid">
+
+            <div class="about-visual">
+                <div class="symbol">ϟ</div>
+                <h3>BlueCurrent Electrical</h3>
+                <p>Precision. Reliability. Power.</p>
+            </div>
+
+            <div class="about-text">
+                <div class="eyebrow">About Our Brand</div>
+
+                <h2>Built on Skill. Driven by Purpose.</h2>
+
+                <p>
+                    BlueCurrent Electrical is a growing electrical services
+                    brand inspired by technical discipline, attention to detail,
+                    and a commitment to reliable service.
+                </p>
+
+                <p>
+                    With a background in maritime electro-technical work,
+                    the vision is to bring a safety-minded and systematic
+                    approach to residential and commercial electrical projects.
+                </p>
+
+                <p>
+                    Every project deserves careful planning, clear communication,
+                    and respect for the customer's property.
+                </p>
+
+                <ul class="values">
+                    <li><span>✓</span> Safety comes first</li>
+                    <li><span>✓</span> Quality over shortcuts</li>
+                    <li><span>✓</span> Honest communication</li>
+                    <li><span>✓</span> Continuous improvement</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="why-us">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">Our Commitment</div>
+                <h2>What Matters to Us</h2>
+                <p>
+                    Building trust through a professional mindset and
+                    a consistent commitment to doing things properly.
+                </p>
+            </div>
+
+            <div class="benefit-grid">
+
+                <div class="benefit">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>Safety First</h3>
+                    <p>
+                        Safe practices and attention to electrical requirements
+                        are central to every project.
+                    </p>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Precision</h3>
+                    <p>
+                        Careful assessment and attention to detail help support
+                        dependable results.
+                    </p>
+                </div>
+
+                <div class="benefit">
+                    <div class="benefit-icon">🤝</div>
+                    <h3>Customer Trust</h3>
+                    <p>
+                        Clear communication and respect for customers are
+                        essential to a good working relationship.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <div class="container">
+
+            <div class="section-heading">
+                <div class="eyebrow">Get in Touch</div>
+                <h2>Let's Connect Your Project</h2>
+                <p>
+                    Have an electrical project or question?
+                    Send an inquiry to get the conversation started.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-info">
+                    <h3>Contact BlueCurrent Electrical</h3>
+
+                    <p>
+                        We welcome inquiries about residential and commercial
+                        electrical installation, maintenance, and other services.
+                    </p>
+
+                    <div class="contact-item">
+                        <strong>📧 Email</strong>
+                        <p>bluecurrent@gmail.com</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>📱 Phone / Viber</strong>
+                        <p>+63 936 776 7900</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <strong>📍 Service Area</strong>
+                        <p> Isabela, Philippines</p>
+                    </div>
+
+                    <p style="font-size:13px;">
+                        
+                    </p>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <h3>Send an Inquiry</h3>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Contact Number</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your contact number"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option>Residential Electrical</option>
+                            <option>Commercial Electrical</option>
+                            <option>Installation and Upgrades</option>
+                            <option>Troubleshooting</option>
+                            <option>Preventive Maintenance</option>
+                            <option>Other Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us briefly about your project..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Prepare Inquiry Message →
+                    </button>
+
+                    <p class="form-note">
+                        This sample form prepares a message on your device.
+                        It does not automatically send information to the business.
+                    </p>
+
+                    <div id="formResult" style="display:none; margin-top:15px;">
+                        <p>Your inquiry is ready. Copy the message below and
+                        send it using your preferred messaging app.</p>
+                        <textarea id="preparedMessage" readonly
+                            style="width:100%; min-height:160px; margin-top:10px;"></textarea>
+                        <button type="button" id="copyMessage"
+                            class="btn btn-primary" style="margin-top:10px;">
+                            Copy Message
+                        </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>
+                © <span id="year"></span>
+                <strong>BlueCurrent Electrical</strong>.
+                Reliable Power. Every Connection.
+            </p>
+
+            <p>Professionalism • Safety • Reliability</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+        document.getElementById("contactForm").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const phone = document.getElementById("phone").value;
+                const service = document.getElementById("service").value;
+                const message = document.getElementById("message").value;
+
+                const inquiry =
+                    "Hello BlueCurrent Electrical!\n\n" +
+                    "I would like to make an inquiry.\n\n" +
+                    "Name: " + name + "\n" +
+                    "Contact Number: " + phone + "\n" +
+                    "Service Needed: " + service + "\n" +
+                    "Project Details: " + message;
+
+                document.getElementById("preparedMessage").value = inquiry;
+                document.getElementById("formResult").style.display = "block";
+            }
+        );
+
+        document.getElementById("copyMessage").addEventListener(
+            "click",
+            async function() {
+                const message =
+                    document.getElementById("preparedMessage").value;
+
+                try {
+                    await navigator.clipboard.writeText(message);
+                    this.textContent = "Message Copied!";
+                } catch (error) {
+                    document.getElementById("preparedMessage").select();
+                    document.execCommand("copy");
+                    this.textContent = "Copy Attempted";
+                }
+            }
+        );
+    </script>
+
+</body>
+</html>
